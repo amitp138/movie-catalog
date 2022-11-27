@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 import MovieCard from './MovieCard';
 
 const MovieList = (props) => {
@@ -8,7 +8,7 @@ const MovieList = (props) => {
 	return (
 		<>
 			{props.movies.map((movie, index) => (
-				<div className='image-container card m-3' >
+				<div className='image-container card m-3' key={index}>
 					<MovieCard movie={movie} key={movie.imdbID} id={movie.imdbID} />
 					<div
 						onClick={() => props.handleFavouritesClick(movie)}

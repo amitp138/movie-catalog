@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 const MovieCard = ({ movie, id }) => {
   return (
-    <div div className="img-cont ">
+    <div className="img-cont ">
       <Link to={`/movies/${id}`} className="link">
         <img
           src={movie.Poster}
