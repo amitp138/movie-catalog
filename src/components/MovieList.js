@@ -8,7 +8,7 @@ const MovieList = (props) => {
 	return (
 		<>
 			{props.movies.map((movie, index) => (
-				<div className='image-container card m-3' style={{width:"25vw",height:"60vh"}}>
+				<div className='image-container card m-3' >
 					<MovieCard movie={movie} key={movie.imdbID} id={movie.imdbID} />
 					<div
 						onClick={() => props.handleFavouritesClick(movie)}
