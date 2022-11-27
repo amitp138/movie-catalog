@@ -1,38 +1,112 @@
-.App {
-  text-align: center;
+body {
+	background: #141414;
+	color: #ffffff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.movie-app > .row {
+	overflow-x: auto;
+	flex-wrap: nowrap;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.image-container {
+	position: relative;
+	transition: transform 0.2s;
+}
+
+.image-container:hover {
+	cursor: pointer;
+	transform: scale(1.1);
+}
+
+.image-container:hover .overlay {
+	opacity: 1;
+}
+
+.overlay {
+	position: absolute;
+	background: rgba(0, 0, 0, 0.8);
+	width: 100%;
+	transition: 0.5s ease;
+	opacity: 0;
+	left: 0;
+	bottom: 0;
+	font-size: 20px;
+	padding: 20px;
+	text-align: center;
+}
+/*movie item*/
+.movcont{
+	width: 120%;
+	
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .image>img{
+	width: 30vw;
+	border-radius: 20px;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .line {
+	width: 0.2vw;
+	height: 6vh;
+  
+	background-color: white;
   }
-}
+  
+  .home-link{
+	list-style-type: none;
+	text-decoration: none;
+	
+  }
+  .moviee{
+   width: 20vw ;
+   height:60vh;
+  }
+  .img-mov{
+	width: 20vw ;
+	height:50vh;
+  }
+  @media screen and (max-width:820px){
+	
+	.moviee{
+	  width: 50vw;
+	  height: 30vh;
+	  margin: 0;
+	
+	  }
+	 .img-mov{
+	  width: 100% ;
+	height:20vh;
+	 }
+	.image>img{
+	  border-radius: 20px;
+	  width: 100%;
+	  height: 50vh;
+	 
+	}
+	.star {
+	  width: 20px;
+	  height: 5px;
+	  margin-right: 5px;
+	}
+	.movcont{
+	  width: 165%;
+	  display: flex;
+	  flex-direction: column;
+	}
+	.line {
+	 height: 40px;
+	 width: 5px;
+	 background-color: white;
+	}
+  }
+  
+  .rate{
+	padding: 0;
+	margin: 0;
+  }
+  .star {
+	width: 3vw;
+	height: 4vh;
+  }
+  .btn-home{
+	border: none;
+  }
