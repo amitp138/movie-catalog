@@ -88,6 +88,7 @@ const App = () => {
           movies={movies}
           handleFavouritesClick={addFavouriteMovie}
           favouriteComponent={AddFavourites}
+          searchValue={searchValue}
         />
       </div>
       <div className="row d-flex align-items-center mt-4 mb-4">

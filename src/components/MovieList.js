@@ -18,6 +18,7 @@ const MovieList = (props) => {
 					</div>
 				</div>
 			))}
+			{!props.movies && props.searchValue && "No results found"}
 		</>
 	);
 };
