@@ -14,18 +14,17 @@ const App = () => {
   const [favourites, setFavourites] = useState([]);
   const [searchValue, setSearchValue] = useState("mars");
 
-  
-
   useEffect(() => {
-	const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=263d22d8`;
+    const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=263d22d8`;
 
-	getAPI(url).then((responseJson) => {
-		console.log(responseJson.data.Search)
-		setMovies(responseJson.data.Search);
-	  }).catch((error) => {
-		  console.log(error)
-		})
-    
+    getAPI(url)
+      .then((responseJson) => {
+        console.log(responseJson.data.Search);
+        setMovies(responseJson.data.Search);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, [searchValue]);
 
   useEffect(() => {
@@ -56,12 +55,33 @@ const App = () => {
     setFavourites(newFavouriteList);
     saveToLocalStorage(newFavouriteList);
   };
+  const Search = () => {
+    const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=263d22d8`;
 
+    getAPI(url)
+      .then((responseJson) => {
+        console.log(responseJson.data.Search);
+        setMovies(responseJson.data.Search);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  function onKeyDown(e) {
+    if (e.keyCode === 13) {
+      Search();
+    }
+  }
   return (
     <div className="container-fluid movie-app">
       <div className="row d-flex align-items-center ">
         <MovieListHeading heading="Movies" />
-        <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
+        <SearchBox
+          onKeyDown={onKeyDown}
+          Search={Search}
+          searchValue={searchValue}
+          setSearchValue={setSearchValue}
+        />
       </div>
       <div className="row">
         <MovieList

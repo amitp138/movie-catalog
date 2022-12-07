@@ -1,9 +1,9 @@
 import React from 'react';
-
+import "../App.css"
 const AddFavourite = () => {
 	return (
 		<>
-			<span >Add to Favourites</span>
+			<span  >Add to Favourites</span>
 			<svg
 				width='1em'
 				height='1em'

@@ -7,7 +7,7 @@ const MovieList = (props) => {
 
 	return (
 		<>
-			{props.movies.map((movie, index) => (
+			{props.movies && props.movies.map((movie, index) => (
 				<div className='image-container card m-3' key={index}>
 					<MovieCard movie={movie} key={movie.imdbID} id={movie.imdbID} />
 					<div
